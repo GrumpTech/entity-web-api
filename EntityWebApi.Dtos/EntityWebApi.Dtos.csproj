@@ -9,7 +9,7 @@
     <Description>
       Generate DTOs from entities.
     </Description>
-    <PackageTags>EntitWebApi;DTOs</PackageTags>
+    <PackageTags>EntityWebApi;DTOs</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using EndpointHandlers.Enums;
 using EntityWebApi.AutoMapper.Interfaces;
 using EntityWebApi.Core.Attributes;
 using EntityWebApi.MinimalApi.Attributes;
+using EntityWebApi.MinimalApi.Enums;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;

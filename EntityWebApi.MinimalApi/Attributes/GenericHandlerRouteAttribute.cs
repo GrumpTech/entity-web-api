@@ -1,20 +1,14 @@
 using System.Diagnostics.CodeAnalysis;
-using HttpMethod = EndpointHandlers.Enums.HttpMethod;
+using HttpMethod = EntityWebApi.MinimalApi.Enums.HttpMethod;
 
 namespace EntityWebApi.MinimalApi.Attributes
 {
     [AttributeUsage(AttributeTargets.Method, Inherited = false)]
-    public class GenericHandlerRouteAttribute : Attribute
+    public class GenericHandlerRouteAttribute(HttpMethod httpMethod, [StringSyntax("Route")] string template) : Attribute
     {
-        public HttpMethod HttpMethod { get; }
+        public HttpMethod HttpMethod { get; } = httpMethod;
 
         [StringSyntax("Route")]
-        public string Template { get; }
-
-        public GenericHandlerRouteAttribute(HttpMethod httpMethod, [StringSyntax("Route")] string template)
-        {
-            Template = template;
-            HttpMethod = httpMethod;
-        }
+        public string Template { get; } = template;
     }
 }

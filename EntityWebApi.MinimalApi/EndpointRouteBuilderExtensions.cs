@@ -1,11 +1,13 @@
-﻿using EndpointHandlers;
+﻿using EntityWebApi.MinimalApi.Internal;
 using EntityWebApi.Core;
 using EntityWebApi.Core.Attributes;
 using EntityWebApi.MinimalApi.Attributes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using HttpMethod = EntityWebApi.MinimalApi.Enums.HttpMethod;
 
 namespace EntityWebApi.MinimalApi
 {
@@ -29,6 +31,14 @@ namespace EntityWebApi.MinimalApi
                 }
             }
             return result;
+        }
+
+        public static RouteHandlerBuilder MapEndpointHandler(this IEndpointRouteBuilder endpoints,
+            [StringSyntax("Route")] string route, HttpMethod httpMethod, MethodInfo method)
+        {
+            var attributes = method.GetCustomAttributesData();
+            var endpointDelegate = new DelegateFactory().CreateDelegate(method, attributes);
+            return endpoints.MapMethods(route, [httpMethod.ToString()], endpointDelegate);
         }
 
         private static string ReplaceMultiple(string value, IDictionary<string, string> replacements)

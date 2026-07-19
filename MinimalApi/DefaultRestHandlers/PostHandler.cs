@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using EndpointHandlers.Enums;
 using EntityWebApi.AutoMapper;
 using EntityWebApi.AutoMapper.Interfaces;
 using EntityWebApi.Core.Attributes;
 using EntityWebApi.MinimalApi.Attributes;
+using EntityWebApi.MinimalApi.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;

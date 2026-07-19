@@ -5,11 +5,11 @@
     <PackageId>GrumpTech.EntityWebApi.Core</PackageId>
     <Authors>GrumpTech</Authors>
     <Copyright>2026 GrumpTech</Copyright>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
     <Description>
       Core objects, attributes, and enums of EntityWebApi
     </Description>
-    <PackageTags>EntitWebApi;core;attributes;enums</PackageTags>
+    <PackageTags>EntityWebApi;core;attributes;enums</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>

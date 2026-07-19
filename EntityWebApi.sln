@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalApi", "MinimalApi\Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityWebApi.MinimalApi", "EntityWebApi.MinimalApi\EntityWebApi.MinimalApi.csproj", "{CBD7A70C-C5E9-4851-9BBF-A67DC9960297}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndpointHandlers", "..\EndpointHandlers\EndpointHandlers\EndpointHandlers.csproj", "{A1B30EEC-13CE-4025-8FDE-00E635AA2FF8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityWebApi.Controllers", "EntityWebApi.Controllers\EntityWebApi.Controllers.csproj", "{ADEA3ED7-39B0-492B-8468-4B199BAD4D97}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityWebApi.Core.Tests", "Tests\EntityWebApi.Core.Tests\EntityWebApi.Core.Tests.csproj", "{11E65344-85A0-49BF-9CE7-23A0FCB492E6}"
