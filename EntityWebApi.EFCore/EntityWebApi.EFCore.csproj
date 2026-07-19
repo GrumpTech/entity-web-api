@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>GrumpTech.EntityWebApi.EFCore</PackageId>
+    <Version>1.0.0</Version>
+    <Description>
+      Generic database expressions for use with EntityWebApi
+    </Description>
+    <PackageTags>EntityWebApi;EFCore</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/GrumpTech/entity-web-api/EntityWebApi.EFCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GrumpTech/entity-web-api</RepositoryUrl>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.10" />
+  </ItemGroup>
+  <ItemGroup>
+      <None Include="../LICENSE" Pack="true" PackagePath="" />
+      <None Include="../icon.png" Pack="true" PackagePath="" />
+      <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>

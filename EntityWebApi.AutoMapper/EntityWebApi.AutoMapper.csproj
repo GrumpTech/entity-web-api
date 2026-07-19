@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>GrumpTech.EntityWebApi.AutoMapper</PackageId>
+    <Authors>GrumpTech</Authors>
+    <Copyright>2026 GrumpTech</Copyright>
+    <Version>0.1.0</Version>
+    <Description>
+      Generate and store Automapper mappers.
+    </Description>
+    <PackageTags>EntityWebApi;AutoMapper;store</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/GrumpTech/entity-web-api/EntityWebApi.AutoMapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GrumpTech/entity-web-api</RepositoryUrl>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Collection.EntityFrameworkCore" Version="11.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityWebApi.Core\EntityWebApi.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+      <None Include="../LICENSE" Pack="true" PackagePath="" />
+      <None Include="../icon.png" Pack="true" PackagePath="" />
+      <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>

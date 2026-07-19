@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>Enable</Nullable>
+    <UserSecretsId>8cb512f3-f166-437d-95d0-6fbe516cc12d</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityWebApi.AutoMapper\EntityWebApi.AutoMapper.csproj" />
+    <ProjectReference Include="..\EntityWebApi.Controllers\EntityWebApi.Controllers.csproj" />
+    <ProjectReference Include="..\EntityWebApi.Dtos\EntityWebApi.Dtos.csproj" />
+    <ProjectReference Include="..\EntityWebApi.EFCore\EntityWebApi.EFCore.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

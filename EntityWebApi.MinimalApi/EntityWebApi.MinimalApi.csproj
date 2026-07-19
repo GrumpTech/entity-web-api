@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>GrumpTech.EntityWebApi.Attributes</PackageId>
+    <Version>1.0.0</Version>
+    <PackageTags>EntityWebApi;Minimal Api;endpoints</PackageTags>
+    <Description>
+      Configure use of endpoints.
+    </Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EndpointHandlers\EndpointHandlers\EndpointHandlers.csproj" />
+    <ProjectReference Include="..\EntityWebApi.Core\EntityWebApi.Core.csproj" />
+  </ItemGroup>
+</Project>

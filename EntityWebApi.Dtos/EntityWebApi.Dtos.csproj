@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>GrumpTech.EntityWebApi.Dtos</PackageId>
+    <Authors>GrumpTech</Authors>
+    <Copyright>2026 GrumpTech</Copyright>
+    <Version>0.1.0</Version>
+    <Description>
+      Generate DTOs from entities.
+    </Description>
+    <PackageTags>EntitWebApi;DTOs</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/GrumpTech/entity-web-api/EntityWebApi.Dtos</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GrumpTech/entity-web-api</RepositoryUrl>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityWebApi.Core\EntityWebApi.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+      <None Include="../LICENSE" Pack="true" PackagePath="" />
+      <None Include="../icon.png" Pack="true" PackagePath="" />
+      <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
