@@ -1,32 +1,52 @@
 # EntityWebApi
 
-Generate web APIs from your entities with minimal code.
+**Generate web APIs from your entities with minimal code.**
 
-EntityWebApi helps you expose your domain entities through HTTP endpoints using your own generic controllers or Minimal API handlers. It provides a flexible foundation for building entity-driven APIs while keeping your application architecture clean and maintainable.
+EntityWebApi enables you to expose domain entities through HTTP endpoints using generic controllers or Minimal API handlers, providing a flexible foundation for clean and maintainable entity-driven APIs.
+
+**Important:** This project is **not production-ready**, but it is suitable for fast prototyping. If you find it useful, consider starring the project on GitHub. The project is also open to sponsorship.
 
 ## Getting started
 
+### Demos
+
+See [web API](/WebApi/) or [minimal API](/MinimalApi/).
+
 ### Commands
 
-See [package.json](/package.json) for scripts to build the mustache example layouts.
+- Start a SQL Server instance:
+  ```
+  docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=[Password]" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+  ```
 
-- Manage user secrets
+- Add the connectionstring as a user secret:
+  ```
   dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost,1433;Database=TestDb;User Id=sa;Password=[Password];TrustServerCertificate=True"
-```
-{
-    "ConnectionStrings": {
-        "DefaultConnection":"Server=localhost,1433;Database=TestDb;User Id=sa;Password=[Password];TrustServerCertificate=True"
-    }
-}
-```
-- Run `docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=[Password]" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest` to start a sql server.
-- Run `dotnet ef migrations add [Name]` in the [Infrastructure](/Infrastructure/) folder to create migrations.
-- Run `dotnet ef dbcontext scaffold "Data Source=localhost,1433;Initial Catalog=[name];User Id=sa;Password=[Password];TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer`
+  ```
 
+- Create a database migration from the [Infrastructure folder](/Infrastructure/):
+  ```
+  dotnet ef migrations add [Name]
+  ```
 
-- Run `dotnet run` in the [WebApi](/WebApi/) or [MinimalApi](/MinimalApi/) folder to run the web api.
+- Start an example [web API](/WebApi/) or [minimal API](/MinimalApi/):
+  ```
+  dotnet run
+  ```
 
-### Source code
+- Scaffold entities from an existing database
+  ```
+  dotnet ef dbcontext scaffold "Data Source=localhost,1433;Initial Catalog=[name];User Id=sa;Password=[Password];TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer
+  ```
+**Note:** For a correct database definition make strings explicitely nullable with a question mark or non-nullable with a [Required] attribute.
 
-For a correct database definition make strings explicitely nullable with a question mark or non-nullable with [Required].
+### APIs
 
+The APIs are documented for each library individually.
+
+- [EntityWebApi.AutoMapper](/EntityWebApi.AutoMapper)
+- [EntityWebApi.Controllers](/EntityWebApi.Controllers)
+- [EntityWebApi.Core](/EntityWebApi.Core)
+- [EntityWebApi.Dtos](/EntityWebApi.Dtos)
+- [EntityWebApi.EFCore](/EntityWebApi.EFCore)
+- [EntityWebApi.MinimalApi](/EntityWebApi.MinimalApi)

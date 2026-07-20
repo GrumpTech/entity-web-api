@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Attributes
 {
-    public class PatchDtoProperty : DtoPropertyAttribute
+    public class PatchDtoPropertyAttribute : DtoPropertyAttribute
     {
         public override bool Optional { get; set; } = true;
     }

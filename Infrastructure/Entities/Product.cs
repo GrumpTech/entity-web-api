@@ -1,4 +1,5 @@
 ﻿using EntityWebApi.Core.Attributes;
+using Infrastructure.Attributes;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Entities
@@ -8,10 +9,10 @@ namespace Infrastructure.Entities
         [DtoProperty]
         public int Id { get; set; }
 
-        [DtoProperty, Required]
+        [DtoProperty, PatchDtoProperty, Required]
         public string Name { get; set; } = "";
 
-        [DtoProperty, Required]
+        [DtoProperty, PatchDtoProperty, Required]
         public decimal Price { get; set; }
     }
 }

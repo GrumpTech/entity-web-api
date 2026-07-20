@@ -5,7 +5,7 @@
     <PackageId>GrumpTech.EntityWebApi.Core</PackageId>
     <Authors>GrumpTech</Authors>
     <Copyright>2026 GrumpTech</Copyright>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Description>
       Core objects, attributes, and enums of EntityWebApi
     </Description>

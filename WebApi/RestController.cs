@@ -21,7 +21,7 @@ namespace WebApi
     [OpenApiTag("RestController - [Entity]")]
     [ArgumentRouteValue("Entity", "TEntity")]
     [ArgumentRouteValue("EntityKey", "TKeyDto", RouteValueConversion.ObjectValues)]
-    public class RestController<TDbContext, TEntity, TKeyDto, TDto, TPostDto, TPutDto> : ControllerBase
+    public class RestController<TDbContext, TEntity, TKeyDto, TDto, TPostDto, TPutDto, TPatchDto> : ControllerBase
         where TDbContext : DbContext
         where TEntity : class
         where TKeyDto : class
@@ -82,7 +82,7 @@ namespace WebApi
         }
 
         [HttpPatch("[EntityKey]")]
-        public async Task<ActionResult> Patch([FromRoute] TKeyDto key, [FromBody] TPutDto putDto)
+        public async Task<ActionResult> Patch([FromRoute] TKeyDto key, [FromBody] TPatchDto patchDto)
         {
             var entity = await _mapper.ProjectTo<TEntity>(
                 _mapper.ProjectTo<TDto>(_dbContext.Set<TEntity>().WhereHasKey(key))
@@ -92,7 +92,7 @@ namespace WebApi
                 return NotFound();
             }
             _dbContext.Attach(entity);
-            _mapper.Map(putDto, entity);
+            _mapper.Map(patchDto, entity);
             await _dbContext.SaveChangesAsync();
             return Ok(_mapper.Map<TDto>(entity));
         }

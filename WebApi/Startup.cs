@@ -50,6 +50,7 @@ namespace WebApi
                 .CreateDtos(dataContext)
                 .CreatePostDtos(dataContext)
                 .CreatePutDtos(dataContext)
+                .CreatePutDtos<PatchDtoPropertyAttribute>(dataContext, false, "PatchDto")
                 .Build();
             app.AddToMapperStore("EntityMapper", config =>
             {
@@ -65,7 +66,7 @@ namespace WebApi
                     typeStore.GetRequired($"{entityType.Name}{argumentName[1..]}"))
                 .AddArgumentResolver("TDbContext", entityType => typeof(DataContext))
                 .AddArgumentResolver("TEntity", entityType => entityType)
-                .AddControllers(typeof(RestController<,,,,,>), entityTypes)
+                .AddControllers(typeof(RestController<,,,,,,>), entityTypes)
             );
 
             app.UseHttpsRedirection();

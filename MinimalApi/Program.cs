@@ -46,7 +46,7 @@ namespace MinimalApi
                     .CreateDtos(dataContext)
                     .CreatePostDtos(dataContext)
                     .CreatePutDtos(dataContext)
-                    .CreatePutDtos<PatchDtoProperty>(dataContext, false, "PatchDto")
+                    .CreatePutDtos<PatchDtoPropertyAttribute>(dataContext, false, "PatchDto")
                     .Build();
                 app.AddToMapperStore("EntityMapper", config =>
                 {
