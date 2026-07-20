@@ -27,23 +27,14 @@ jobs:
       - name: "Test project"
         run: dotnet test --no-restore --no-build --configuration Release
         
-      - name: "Pack EntityWebApi.Automapper"
-        run: dotnet pack EntityWebApi.AutoMapper/EntityWebApi.AutoMapper.csproj --no-restore --no-build --configuration Release --output dist
-
-      - name: "Pack EntityWebApi.Controllers"
-        run: dotnet pack EntityWebApi.Controllers/EntityWebApi.Controllers.csproj --no-restore --no-build --configuration Release --output dist
-
-      - name: "Pack EntityWebApi.Core"
-        run: dotnet pack EntityWebApi.Core/EntityWebApi.Core.csproj --no-restore --no-build --configuration Release --output dist
-
-      - name: "Pack EntityWebApi.Dtos"
-        run: dotnet pack EntityWebApi.Dtos/EntityWebApi.Dtos.csproj --no-restore --no-build --configuration Release --output dist
-
-      - name: "Pack EntityWebApi.EFCore"
-        run: dotnet pack EntityWebApi.EFCore/EntityWebApi.EFCore.csproj --no-restore --no-build --configuration Release --output dist
-
-      - name: "Pack EntityWebApi.MinimalApi"
-        run: dotnet pack EntityWebApi.MinimalApi/EntityWebApi.MinimalApi.csproj --no-restore --no-build --configuration Release --output dist
+      - name: "Pack EntityWebApi libraries"
+        run: | 
+          dotnet pack EntityWebApi.AutoMapper/EntityWebApi.AutoMapper.csproj --no-restore --no-build --configuration Release --output dist
+          dotnet pack EntityWebApi.Controllers/EntityWebApi.Controllers.csproj --no-restore --no-build --configuration Release --output dist
+          dotnet pack EntityWebApi.Core/EntityWebApi.Core.csproj --no-restore --no-build --configuration Release --output dist
+          dotnet pack EntityWebApi.Dtos/EntityWebApi.Dtos.csproj --no-restore --no-build --configuration Release --output dist
+          dotnet pack EntityWebApi.EFCore/EntityWebApi.EFCore.csproj --no-restore --no-build --configuration Release --output dist
+          dotnet pack EntityWebApi.MinimalApi/EntityWebApi.MinimalApi.csproj --no-restore --no-build --configuration Release --output dist
 
       - name: NuGet login
         uses: NuGet/login@v1
